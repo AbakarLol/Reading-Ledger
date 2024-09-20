@@ -20,7 +20,7 @@ const db = new pg.Client({
     user : user.user,
     host : "localhost",
     database : "notebook",
-    password : user.password ,
+    password : user.password,
     port : 5432
 });
 
@@ -182,7 +182,7 @@ app.post("/modify", async (req, res) => {
         const newBook = result1.rows[0];
         try{
             const result2 = await db.query("INSERT INTO reviews VALUES ($1, $2, $3, $4, $5);", [newBook.id, review.read_date, review.rate, review.overview, review.note] );
-            reviews = getBooksByRate();
+            reviews = await getBooksByRate();
             res.redirect("/")
         }catch(err){
             console.log(err);
