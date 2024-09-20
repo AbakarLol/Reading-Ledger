@@ -28,7 +28,7 @@
         <div class="overviews">
         <div class="modify">
             <% if (locals.data){ %>
-                <form action="/modify/<%= data.id %>" method="post" >
+                <form class="modify-form" action="/modify/<%= data.id %>" method="post" >
                 <div>
                 <label for="title">Title:</label>
                 <input type="text" name="title" id="title" value = "<%= data.title  %>" required>
@@ -62,8 +62,8 @@
                 <input type="submit" id="submit" value="submit">
                 </form>
             <% } else{ %>
-                
-                <form action="/modify" method="post" >
+
+                <form class="modify-form" action="/modify" method="post" >
                 <div>
                     <label for="title">Title:</label>
                     <input type="text" name="title" id="title"  required>

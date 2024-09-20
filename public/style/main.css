@@ -121,7 +121,7 @@ option{
     
 }
 
-form[action="/modify"]{
+.modify-form{
     display: flex;
     flex-direction: column;
     width: 100%;

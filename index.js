@@ -154,11 +154,11 @@ app.post("/modify/:id" , async (req, res) => {
         res.redirect("/");
         }catch(err){
             console.log(err.stack);
-            res.redirect(`/edit/:${id}`)
+            res.redirect(`/edit/${id}`)
         }
     }catch(err){
         console.log(err.stack);
-        res.redirect(`/edit/:${id}`)
+        res.redirect(`/edit/${id}`)
     }
 });
 
@@ -186,6 +186,7 @@ app.post("/modify", async (req, res) => {
             res.redirect("/")
         }catch(err){
             console.log(err);
+            
             res.redirect("/");
         }
     }catch(err){
