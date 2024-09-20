@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #45474B;
+    font-family: Arial, sans-serif;
+}
+
+.body{
+    background-color: #F5F7F8;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+       
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    padding-top: 4.2rem;
+    
+}
+
+.header, .overviews,  hr{
+    width: 50%;
+    justify-content: center;
+}
+
+img.book-cover{
+    float: left;
+    margin-right: 2rem ;
+}
+
+.overviews, .content, .header{
+    text-align: justify;
+    margin: 1rem 0;
+} 
+
+
+
+a, h1, h2{
+    color: #379777;
+    margin: 1rem 0;
+}
+
+p{
+    margin: 1rem 0;
+}
+
+hr{
+    background-color: #F4CE14;
+    height: 2px;
+    border: #F4CE14 1px solid;
+}
+
+.navbar{
+    position: fixed;
+    background-color: #45474B;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: #F5F7F8 1px solid;
+    box-shadow: 0 0 2px 0 antiquewhite;
+    width: 100%; 
+    
+   
+}
+
+.sorting, .write, .edit, .delete, #submit{
+    background-color: #379777;
+    border: #379777 2px solid;
+    margin: 1rem;
+    color: #F5F7F8;
+    height: 2.5rem;
+    width: 8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075);
+    display: inline-block;
+    vertical-align: middle;
+
+}
+.sorting:active, .write:active{
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+}
+
+option{
+    margin: 1rem;
+    color: #F5F7F8;
+    border-radius: 5px;
+}
+
+
+.write, .delete, .edit{
+    margin-right: 8rem;
+    color: #F5F7F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.edit{
+    margin-right: 0;
+}
+
+.modify{
+    border: #45474B 0.5px solid;
+    padding: 2rem;
+    display: flex;
+    
+    border-radius: 5px;
+    justify-content: center;
+    align-items: flex-start;
+    height: 65vh;
+    
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+form[action="/modify"]{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    background-color: #ffffff;
+}
+
+#title, #authors, #overview, #note, #submit {
+    width: 100%;
+    border: #379777 2px solid;
+    border-radius: 3px;
+    height: 2rem;
+    margin: 0;
+    
+} 
+#isbn, #read_date, #rate{
+    border: #379777 2px solid;
+    border-radius: 3px;
+    height: 2rem; 
+
+}
+
+#title:active, #authors:active, #overview:active, #note:active, #submit:active, #isbn:active, #read_date:active, #rate:active{
+    border: #F4CE14;    
+}
+
+
+
+#overview{
+    height: 6rem;
+}
+
+#note{
+    height: 7rem;
+}
+label{
+    
+    font-weight: bold;
+}
+.small{
+    display: flex;
+    justify-content: space-between;
+}
+#submit{
+    background-color: #3498db ;
+    border: #3498db;
+}
+#submit:hover{
+    background-color: #2980b9;
+    border: #3498db;
+}
+
+.delete{
+    background-color: #e74c3c;
+}
+.delete:hover{
+    background-color: #c0392b;   
+}
+.edit:hover, .write:hover{
+    background-color: #2b785e;
+}
+.overview-content{
+    margin-bottom: 4rem;
+}
+
+h1>span{
+    color: #F4CE14;
+    font-size: smaller;
+}
+
+.brand{
+    font-size: larger;
+    color: #379777;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+

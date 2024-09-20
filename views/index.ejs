@@ -1,0 +1,60 @@
+<%- include('partials/header.ejs') %>
+
+<body>
+    <div class="navbar">
+        <div>
+            <form action="/sort" method="post" >
+                <label for="sort">Sort by:</label>
+                <select class="sorting" onchange="this.form.submit()" name="sort" id="sort">
+                    <option value="rate">By Rate</option>
+                    <option value="title">By Name</option>
+                    <option value="date">By Date</option>
+                </select>
+               
+            </form>
+        </div>
+        <div>
+            <form  action="/write" method="post">
+            <button type="submit" class="write" >  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F5F7F8" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              </svg>  Write  </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main">
+        
+        <div class="header">
+            <h1 > <span class="brand">The Reading Ledger</span> <br>
+               <span> Books I've Read </span> </h1>
+            <h3> Short summaries with detailed reflections on each. Use the ISBN to find them at your local library or favorite bookstore. This page will be updated as I finish more books, so be sure to bookmark and revisit!</h3>
+            
+        </div>
+
+        <hr>
+
+        <div class="overviews">
+            <% if (locals.data){ %>
+                <% data.forEach(element => { %>
+                    <div class="overview-content">
+                    <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/<%=element.isbn%>-M.jpg" alt="coverpage">
+                    <a href="/note/<%= element.id%>">
+                    <h2><%= element.title %> by <%= element.authors %> </h2>
+                    </a>
+                    <p> Reading Date : <%= element.read_date%>, My rating : <%= element.rate %> / 10 </p>
+                    <div class="content">
+                        <p> <%- element.overview %> </p>
+                    </div>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div class="overview">
+
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
